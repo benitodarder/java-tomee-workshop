@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>local.tin.tests</groupId>
-    <artifactId>tomee-hello-world</artifactId>
+    <artifactId>tomee-interceptors</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
     <parent>
@@ -33,11 +33,7 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-        </dependency>   
-        <dependency>
-            <groupId>net.bull.javamelody</groupId>
-            <artifactId>javamelody-core</artifactId>
         </dependency>     
     </dependencies>
-    <name>tomee-hello-world</name>
+    <name>tomee-interceptors</name>
 </project>

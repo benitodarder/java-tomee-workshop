@@ -56,5 +56,6 @@
     <modules>
         <module>tomee-hello-world</module>
         <module>tomee-quartz</module>
+        <module>tomee-interceptors</module>
     </modules>
 </project>
