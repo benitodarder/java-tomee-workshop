@@ -15,11 +15,13 @@ public class SimpleInterceptor {
 
     @AroundInvoke
     public Object intercept(InvocationContext ctx) throws Exception {
+        Object object = null;
         try {
             LOGGER.info("SimpleInterceptor about to proceed...");
-            return ctx.proceed();
+            object = ctx.proceed();
+            return object;
         } finally {
-            LOGGER.info("SimpleInterceptor right after proceeding...");
+            LOGGER.info("SimpleInterceptor right after proceeding... Response is: " + (object != null ? object.getClass().getCanonicalName() : null));
         }
 
     }
