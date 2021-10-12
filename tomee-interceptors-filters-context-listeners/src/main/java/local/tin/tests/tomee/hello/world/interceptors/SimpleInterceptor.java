@@ -15,8 +15,12 @@ public class SimpleInterceptor {
 
     @AroundInvoke
     public Object intercept(InvocationContext ctx) throws Exception {
-        LOGGER.info("SimpleInterceptor about to proceed...");
-        return ctx.proceed();
+        try {
+            LOGGER.info("SimpleInterceptor about to proceed...");
+            return ctx.proceed();
+        } finally {
+            LOGGER.info("SimpleInterceptor right after proceeding...");
+        }
 
     }
 

@@ -56,6 +56,6 @@
     <modules>
         <module>tomee-hello-world</module>
         <module>tomee-quartz</module>
-        <module>tomee-interceptors-filters</module>
+        <module>tomee-interceptors-filters-context-listeners</module>
     </modules>
 </project>
