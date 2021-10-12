@@ -17,7 +17,10 @@ public class SimpleInterceptor {
     public Object intercept(InvocationContext ctx) throws Exception {
         Object object = null;
         try {
-            LOGGER.info("SimpleInterceptor about to proceed...");
+            LOGGER.info("SimpleInterceptor about to proceed...Target is: " 
+                    + ctx.getTarget().getClass().getCanonicalName() 
+                    + "; Method is: "
+                    + ctx.getMethod().getName());
             object = ctx.proceed();
             return object;
         } finally {
