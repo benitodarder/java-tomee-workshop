@@ -7,55 +7,98 @@
     <packaging>pom</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
         <apache.cfx.version>3.1.6</apache.cfx.version>
         <apache.logging.log4j.version>2.12.1</apache.logging.log4j.version>
         <apache.tomee.version>8.0.0</apache.tomee.version>
+        <apache.tomee.classifier>plus</apache.tomee.classifier>
+        <apache.tomee.maven.plugin>8.0.8</apache.tomee.maven.plugin>
         <javaeee.api.version>7.0</javaeee.api.version>
         <java.melody.version>1.76.0</java.melody.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
+        <maven.war.plugin.version>2.6</maven.war.plugin.version>
     </properties>
     <dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.tomee</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>${javaeee.api.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomee</groupId>
-            <artifactId>tomee-webservices</artifactId>
-            <version>${apache.tomee.version}</version>
-            <scope>provided</scope>
-        </dependency>    
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-rs-client</artifactId>
-            <version>${apache.cfx.version}</version>
-            <scope>provided</scope>
-        </dependency>    
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>${apache.logging.log4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${apache.logging.log4j.version}</version>
-        </dependency>   
-        <dependency>
-            <groupId>net.bull.javamelody</groupId>
-            <artifactId>javamelody-core</artifactId>
-            <version>${java.melody.version}</version>
-        </dependency>     
-    </dependencies>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.tomee</groupId>
+                <artifactId>tomee-embedded</artifactId>
+                <version>${apache.tomee.version}</version>            
+            </dependency>   
+            <dependency>
+                <groupId>org.apache.tomee</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>${javaeee.api.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomee</groupId>
+                <artifactId>tomee-webservices</artifactId>
+                <version>${apache.tomee.version}</version>
+                <scope>provided</scope>
+            </dependency>    
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-rs-client</artifactId>
+                <version>${apache.cfx.version}</version>
+                <scope>provided</scope>
+            </dependency>    
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${apache.logging.log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${apache.logging.log4j.version}</version>
+            </dependency>   
+            <dependency>
+                <groupId>net.bull.javamelody</groupId>
+                <artifactId>javamelody-core</artifactId>
+                <version>${java.melody.version}</version>
+            </dependency>     
+        </dependencies>
     </dependencyManagement>
     <name>tomee-workshop-root</name>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven.war.plugin.version}</version>
+                    <configuration>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.tomee.maven</groupId>
+                    <artifactId>tomee-maven-plugin</artifactId>
+                    <version>${apache.tomee.maven.plugin}</version>
+                    <executions>
+                        <execution>
+                            <id>executable-jar</id>
+                            <goals>
+                                <goal>exec</goal>
+                            </goals>
+                            <phase>package</phase>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <tomeeClassifier>${apache.tomee.classifier}</tomeeClassifier>
+                        <args>-Xmx512m -XX:PermSize=256m</args>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
     <modules>
         <module>tomee-hello-world</module>
         <module>tomee-quartz</module>
         <module>tomee-interceptors-filters-context-listeners</module>
+        <module>tomee-embedded-hello-world</module>
     </modules>
 </project>
