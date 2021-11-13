@@ -209,6 +209,6 @@
         <module>tomee-quartz</module>
         <module>tomee-interceptors-filters-context-listeners</module>
         <module>tomee-embedded-hello-world</module>
-        <module>tomee-crud</module>
+        <module>tomee-crud-unmanaged</module>
     </modules>
 </project>

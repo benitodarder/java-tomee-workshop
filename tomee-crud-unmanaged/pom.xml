@@ -6,7 +6,7 @@
         <artifactId>tomee-workshop-root</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>tomee-crud</artifactId>
+    <artifactId>tomee-crud-unmanaged</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>tomee-crud-model-persistence</module>
@@ -14,4 +14,5 @@
         <module>tomee-crud-dao</module>
         <module>tomee-crud-service</module>
     </modules>
+    <name>tomee-crud-unmanaged</name>
 </project>

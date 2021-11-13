@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>local.tin.tests</groupId>
-        <artifactId>tomee-crud</artifactId>
+        <artifactId>tomee-crud-unmanaged</artifactId>
         <version>1.0</version>
     </parent>
     <artifactId>tomee-crud-dao</artifactId>

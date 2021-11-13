@@ -3,23 +3,16 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>local.tin.tests</groupId>
-        <artifactId>tomee-crud</artifactId>
+        <artifactId>tomee-crud-unmanaged</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>tomee-crud-model-domain</artifactId>
+    <artifactId>tomee-crud-model-persistence</artifactId>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-        </dependency>    
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-jaxrs</artifactId>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <scope>provided</scope>
         </dependency>  
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-        </dependency>
     </dependencies>
 </project>
