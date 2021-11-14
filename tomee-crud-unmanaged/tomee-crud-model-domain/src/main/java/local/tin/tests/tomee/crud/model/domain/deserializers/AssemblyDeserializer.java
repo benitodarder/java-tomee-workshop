@@ -1,17 +1,19 @@
 package local.tin.tests.tomee.crud.model.domain.deserializers;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.io.IOException;
 import local.tin.tests.tomee.crud.model.domain.compositeIds.AssemblyId;
 import local.tin.tests.tomee.crud.model.domain.product.Assembly;
 import local.tin.tests.tomee.crud.model.domain.product.Component;
 import local.tin.tests.tomee.crud.model.domain.product.Product;
 
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.JsonParser;
-import org.codehaus.jackson.JsonProcessingException;
-import org.codehaus.jackson.map.DeserializationContext;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.deser.StdDeserializer;
+
 
 /**
  *
@@ -19,21 +21,26 @@ import org.codehaus.jackson.map.deser.StdDeserializer;
  */
 public class AssemblyDeserializer extends StdDeserializer<Assembly> {
 
-    public AssemblyDeserializer() {
-        super(null);
-    }
-
     public AssemblyDeserializer(Class<?> vc) {
         super(vc);
     }
+
+    public AssemblyDeserializer(JavaType valueType) {
+        super(valueType);
+    }
+
+    public AssemblyDeserializer(StdDeserializer<?> src) {
+        super(src);
+    }
+
 
     @Override
     public Assembly deserialize(JsonParser jp, DeserializationContext dc) throws IOException, JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode jsonNode = jp.getCodec().readTree(jp);
         AssemblyId assemblyId = new AssemblyId();
-        assemblyId.setComponentId(jsonNode.get("id").get("componentId").getValueAsInt());
-        assemblyId.setProductId(jsonNode.get("id").get("productId").getValueAsInt());
+        assemblyId.setComponentId(jsonNode.get("id").get("componentId").asInt());
+        assemblyId.setProductId(jsonNode.get("id").get("productId").asInt());
         Assembly assembly = new Assembly();
         assembly.setId(assemblyId);
         if (jsonNode.get("component") != null) {
@@ -43,7 +50,7 @@ public class AssemblyDeserializer extends StdDeserializer<Assembly> {
             assembly.setProduct(mapper.readValue(jsonNode.get("product").toString(), Product.class));
         }
         if (jsonNode.get("quantity") != null) {
-            assembly.setQuantity(jsonNode.get("quantity").getValueAsDouble());
+            assembly.setQuantity(jsonNode.get("quantity").asDouble());
         }
         return assembly;
     }

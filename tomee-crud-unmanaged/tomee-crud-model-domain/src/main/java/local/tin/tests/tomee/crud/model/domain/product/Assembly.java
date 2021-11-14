@@ -1,5 +1,6 @@
 package local.tin.tests.tomee.crud.model.domain.product;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -8,7 +9,6 @@ import local.tin.tests.tomee.crud.model.domain.abstracts.AbstractProduct;
 import local.tin.tests.tomee.crud.model.domain.compositeIds.AssemblyId;
 import local.tin.tests.tomee.crud.model.domain.deserializers.AssemblyDeserializer;
 import local.tin.tests.tomee.crud.model.domain.deserializers.AssemblyIdDeserializer;
-import org.codehaus.jackson.map.annotate.JsonDeserialize;
 
 /**
  *
