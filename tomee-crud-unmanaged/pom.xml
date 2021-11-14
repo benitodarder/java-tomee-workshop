@@ -9,10 +9,10 @@
     <artifactId>tomee-crud-unmanaged</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>tomee-crud-model-persistence</module>
-        <module>tomee-crud-model-domain</module>
-        <module>tomee-crud-dao</module>
-        <module>tomee-crud-service</module>
+        <module>tomee-crud-unmanaged-model-persistence</module>
+        <module>tomee-crud-unmanaged-domain</module>
+        <module>tomee-crud-unmanaged-dao</module>
+        <module>tomee-crud-unmanaged-service</module>
     </modules>
     <name>tomee-crud-unmanaged</name>
 </project>
