@@ -2,7 +2,7 @@ package local.tin.tests.tomee.crud.dao;
 
 import java.util.Map;
 import java.util.Properties;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 
 /**
  *

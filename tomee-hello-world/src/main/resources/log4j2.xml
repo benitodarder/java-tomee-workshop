@@ -4,7 +4,7 @@
     <Appenders>
         <Console name="STDOUT" target="SYSTEM_OUT">
             <PatternLayout
-                pattern="%d %-5p %m%n" />
+                pattern="%d [%-5level] %m%n" />
         </Console>
     </Appenders>
     <Loggers>

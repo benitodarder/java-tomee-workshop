@@ -4,13 +4,14 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import local.tin.tests.tomee.crud.dao.ProductDAOConfiguration;
 import local.tin.tests.tomee.crud.model.domain.exceptions.DAOException;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ProductDAOFactory extends AbstractDAOFactory {
 
     public static final String UNEXPECTED_DAO_EXCEPTION_CREATING_ENTITY_M = "Unexpected DAOException creating entity manager factory: ";    
     private static final Object LOCK = new Object();
-    private static final Logger LOGGER = Logger.getLogger(ProductDAOFactory.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProductDAOFactory.class);
     private static volatile EntityManagerFactory entityManagerFactory;
 
     private ProductDAOFactory() {

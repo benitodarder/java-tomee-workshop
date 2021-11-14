@@ -6,7 +6,7 @@ import local.tin.tests.tomee.crud.dao.impl.AbstractDAO;
 import local.tin.tests.tomee.crud.dao.impl.AbstractDAOFactory;
 import local.tin.tests.tomee.crud.model.domain.exceptions.DAOException;
 import local.tin.tests.tomee.crud.model.domain.exceptions.ServiceException;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 
 /**
  *

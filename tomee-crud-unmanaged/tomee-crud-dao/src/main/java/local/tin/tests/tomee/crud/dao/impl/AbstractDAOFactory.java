@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import javax.persistence.EntityManagerFactory;
 import local.tin.tests.tomee.crud.model.domain.exceptions.DAOException;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 
 /**
  * Must provide an entity manager factory
@@ -30,7 +30,7 @@ public abstract class AbstractDAOFactory {
             Constructor<?> constructor = daoClass.getDeclaredConstructor(EntityManagerFactory.class);
             return (AbstractDAO) constructor.newInstance(getEntityManagerFactory());
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException | ClassNotFoundException ex) {
-            getLogger().error(ex);
+            getLogger().error("Exception:", ex);
             throw new DAOException(ex);
         }  
     }  

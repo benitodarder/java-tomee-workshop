@@ -2,7 +2,6 @@ package local.tin.tests.tomee.crud.dao;
 
 import local.tin.tests.tomee.crud.dao.ProductDAOConfiguration;
 import java.util.Map;
-import org.apache.log4j.Logger;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
@@ -10,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.mockito.Mockito.mock;
 import org.powermock.reflect.Whitebox;
+import org.slf4j.Logger;
 
 /**
  *

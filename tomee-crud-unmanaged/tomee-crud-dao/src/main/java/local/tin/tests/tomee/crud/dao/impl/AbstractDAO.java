@@ -15,7 +15,8 @@ import local.tin.tests.tomee.crud.dao.interfaces.IAbstractDAO;
 import local.tin.tests.tomee.crud.model.domain.exceptions.DAOException;
 import local.tin.tests.tomee.crud.model.domain.interfaces.ICompositeId;
 import local.tin.tests.tomee.crud.model.persistence.interfaces.IEmbeddable;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -31,7 +32,7 @@ public abstract class AbstractDAO<C0 extends local.tin.tests.tomee.crud.model.do
     public static final String COULD_NOT_PARSE_STRING_INTO_JAVASQL_DATE = "Could not parse string into java.sql.Date";    
     public static final String UNEXPECTED_RUNTIME_EXCEPTION_MESSAGE_PREFIX = " unexpected RuntimeException: ";
     public static final String NOT_SUPPORTED_YET = "Not supported yet.";    
-    private static final Logger LOGGER = Logger.getLogger(AbstractDAO.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AbstractDAO.class);
     private final EntityManagerFactory entityManagerFactory;
     
 

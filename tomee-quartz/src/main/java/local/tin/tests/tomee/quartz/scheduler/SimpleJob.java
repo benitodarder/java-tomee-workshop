@@ -1,21 +1,20 @@
 package local.tin.tests.tomee.quartz.scheduler;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import javax.ejb.Schedule;
 import javax.ejb.SessionContext;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Startup
 @Singleton
 public class SimpleJob {
 
-  private static final Logger LOGGER = LogManager.getLogger();
-
+  private static final Logger LOGGER = LoggerFactory.getLogger(SimpleJob.class);
+  
   @Resource
   private SessionContext sessionContext;
 

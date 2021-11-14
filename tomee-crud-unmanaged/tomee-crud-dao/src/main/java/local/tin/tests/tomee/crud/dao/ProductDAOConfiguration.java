@@ -2,15 +2,15 @@ package local.tin.tests.tomee.crud.dao;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.log4j.Logger;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  *
  * @author benito.darder
  */
 public class ProductDAOConfiguration extends AbstractDAOConfiguration {
 
-    private static final Logger LOGGER = Logger.getLogger(ProductDAOConfiguration.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProductDAOConfiguration.class);
     private static Map<String, String> configurationMap;
 
     private ProductDAOConfiguration() {
