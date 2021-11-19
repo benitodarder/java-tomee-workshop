@@ -2,8 +2,8 @@
 
 tome.xml resource:
 
-'''xml
-  <Resource id="productsDS" type="DataSource">
+
+  &lt;Resource id="productsDS" type="DataSource"&gt;
     JdbcDriver org.hsqldb.jdbcDriver
     JdbcUrl jdbc:hsqldb:mem:products
     UserName=SA
@@ -22,5 +22,4 @@ tome.xml resource:
     removeAbandonedOnMaintenance        true
     removeAbandonedTimeout      60
     JtaManaged false
-  </Resource>
-'''
+  &lt;/Resource&gt;
