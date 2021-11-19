@@ -8,6 +8,7 @@
     <properties>
         <apache.cfx.version>3.1.6</apache.cfx.version>
         <apache.logging.log4j.version>2.12.1</apache.logging.log4j.version>
+        <apache.tomee.bval.version>2.0.3</apache.tomee.bval.version>
         <apache.tomee.version>8.0.0</apache.tomee.version>
         <apache.tomee.classifier>plus</apache.tomee.classifier>
         <apache.tomee.maven.plugin>8.0.8</apache.tomee.maven.plugin>
@@ -33,6 +34,12 @@
     </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.apache.bval</groupId>
+                <artifactId>bval-jsr</artifactId>
+                <version>${apache.tomee.bval.version}</version>
+                <scope>provided</scope>
+            </dependency> 
             <dependency>
                 <groupId>org.apache.tomee</groupId>
                 <artifactId>javaee-api</artifactId>
@@ -197,6 +204,7 @@
         <module>tomee-quartz</module>
         <module>tomee-interceptors-filters-context-listeners</module>
         <module>tomee-embedded-hello-world</module>
-        <module>tomee-crud-unmanaged</module>
+        <module>tomee-crud-unmanaged-no-ds</module>
+        <module>tomee-crud-unmanaged-ds</module>
     </modules>
 </project>
