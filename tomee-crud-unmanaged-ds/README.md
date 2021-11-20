@@ -1,24 +1,17 @@
 # tomee-crud-unmanaged-ds
 
-tome.xml resource:
+Properties loaded from:
 
-  &lt;Resource id="productsDS" type="DataSource"&gt;<br/>
-    JdbcDriver org.hsqldb.jdbcDriver<br/>
-    JdbcUrl jdbc:hsqldb:mem:products<br/>
-    UserName=SA<br/>
-    Password=<br/>
-    testWhileIdle	true<br/>
-    testOnBorrow	true<br/>
-    testOnReturn	false<br/>
-    validationQuery	SELECT 1 FROM INFORMATION_SCHEMA.SYSTEM_USERS<br/>
-    TimeBetweenEvictionRunsMillis 30000<br/>
-    # connectionProperties	"useUnicode=yes;characterEncoding=utf8;"<br/>
-    DataSourceCreator dbcp<br/>
-    accessToUnderlyingConnectionAllowed	true<br/>
-    maxWaitMillis       5000<br/>
-    maxConnLifetimeMillis       300000<br/>
-    accessToUnderlyingConnectionAllowed true<br/>
-    removeAbandonedOnMaintenance        true<br/>
-    removeAbandonedTimeout      60<br/>
-    JtaManaged false<br/>
-  &lt;/Resource&gt;<br/>
+* Default location within resources
+* From external file stated by system property: tomee.crud.service.configuration.path
+
+tomee.xml resource:
+
+  &lt;Resource id="productsDS" type="DataSource"&lgt;
+    JdbcDriver org.hsqldb.jdbcDriver
+    JdbcUrl jdbc:hsqldb:mem:products
+    UserName SA
+    Password 
+    JtaManaged false
+  &lt;/Resource&lgt;
+  
