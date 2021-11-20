@@ -7,11 +7,11 @@ Properties loaded from:
 
 tomee.xml resource:
 
-  &lt;Resource id="productsDS" type="DataSource"&lgt;
-    JdbcDriver org.hsqldb.jdbcDriver
-    JdbcUrl jdbc:hsqldb:mem:products
-    UserName SA
-    Password 
-    JtaManaged false
-  &lt;/Resource&lgt;
+  &lt;Resource id="productsDS" type="DataSource"&gt;<br/>
+    JdbcDriver org.hsqldb.jdbcDriver<br/>
+    JdbcUrl jdbc:hsqldb:mem:products<br/>
+    UserName SA<br/>
+    Password <br/>
+    JtaManaged false<br/>
+  &lt;/Resource&gt;<br/>
   

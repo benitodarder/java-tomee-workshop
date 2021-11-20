@@ -1,0 +1,9 @@
+<resources>
+  <Resource id="productsDS" type="DataSource">
+    JdbcDriver org.hsqldb.jdbcDriver
+    JdbcUrl jdbc:hsqldb:mem:products
+    UserName SA
+    Password 
+    JtaManaged false
+  </Resource>
+</resources>
