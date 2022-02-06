@@ -1,4 +1,4 @@
-# tomee-workshop
+# java-tomee-workshop
 
 Testbed for this application server
 
